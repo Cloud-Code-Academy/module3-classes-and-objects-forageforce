@@ -123,17 +123,23 @@ public with sharing class ClassesObjectsMethods {
      * @return The number of vowels in the string.
      */
     public static Integer countVowels(String str) {
-        // Initialize the result Integer
-
-        /*
-        for () {
-            // get individual characters from the string - hint use substring or split
-            // check if the character is a vowel
-            // if it is a vowel, increment the result Integer
+        if (String.isEmpty(str)) {
+            return null;
         }
-        */
+        // Initialize the result Integer
+        Integer vowelCount = 0;
 
-        return null; // Replace null with the variable you used to store the result
+        for (Integer i = 0; i < str.length(); i++) {
+            // get individual characters from the string - hint use substring or split
+            String character = str.substring(i, i + 1);
+            // check if the character is a vowel
+            if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u') {
+            // if it is a vowel, increment the result Integer
+            vowelCount++;
+            }
+        }
+
+        return vowelCount; // Replace null with the variable you used to store the result
     }
 
     /**
