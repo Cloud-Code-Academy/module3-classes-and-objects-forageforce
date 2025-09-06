@@ -198,9 +198,17 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer generateRandomNumber() {
         // Use Math class to generate number between 50 and 100
-
+        Double random50to100;
+        for (Integer i = 0; i < 50; i++) {
+            random50to100 = (math.random() * 100);
+            random50to100 = math.roundToLong(random50to100);
+            System.debug(random50to100);
+            if (random50to100 >= 50 && random50to100 <= 100) {
+                break;
+            }
+        }
         // Return the random integer
-        return null; // Replace null with the variable you used to store the result
+        return (Integer)random50to100; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -210,12 +218,15 @@ public with sharing class ClassesObjectsMethods {
      * @return The current date in the current user locale format.
      */
     public static String getCurrentDate() {
+        String formattedDate;
         // Get the todays date
+        Date dateToday = Date.today();
 
         // Format the current date
+        formattedDate = dateToday.format();
 
         // Return the result
-        return null; // Replace null with the variable you used to store the result
+        return formattedDate; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -225,15 +236,26 @@ public with sharing class ClassesObjectsMethods {
      * @return The number of the day of the week for the given date.
      */
     public static String getDayOfWeek(DateTime dt) {
+        if (dt == null) {
+            return null;
+        }
         // Define a map of day of the week as a key and day number as the value
         // Monday = 1, Tuesday = 2, etc.
-
+        Map <String, Integer> weekDays = new Map<String, Integer>{
+            'Monday' => 1,
+            'Tuesday' => 2,
+            'Wednesday' => 3,
+            'Thursday' => 4,
+            'Friday' => 5,
+            'Saturday' => 6,
+            'Sunday' => 7
+        };
         // Get the day name using .format('EEEE');
-
+        String dayName = dt.format('EEEE');
         // Get the day number from the map using the day name
-
+        Integer dayNumber = weekDays.get(dayName);
         // Return the result as a string
-        return null; // Replace null with the variable you used to store the result
+        return String.valueOf(dayNumber); // Replace null with the variable you used to store the result
     }
 
 
