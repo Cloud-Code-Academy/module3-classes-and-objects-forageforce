@@ -281,7 +281,7 @@ public with sharing class ClassesObjectsMethods {
 
     /**
      * Question 11
-     * The Book class represents a book in a library. 
+     * The Book class represents a book in a library.
      * Each Book object has a title and an author, and methods to return these details.
      * This class can be used in the context of a library management system, bookstore, etc.
      * where you need to manipulate and manage book information.
@@ -289,18 +289,24 @@ public with sharing class ClassesObjectsMethods {
     public class Book {
         // Declare three public instance variables - title, author, pages
         // title
+        public String title;
         // author
+        public String author;
         // pages
+        public String pages;
     
         // Book constructor to initialize the title and author
-        public Book() {
+        public Book(String title, String author) {
             // Initialize the title and author
+            this.title = title;
+            this.author = author;
         }
     
         // Method that returns the details of the book
         public String getBookDetails() {
             // return A string containing the details of the book in the format "Title: <title>, Author: <author>"
-            return null; // Replace null with the variable you used to store the result
+            String bookDetails = 'Title: ' + title + ', Author: ' + author; 
+            return bookDetails; // Replace null with the variable you used to store the result
         }
     }
     
