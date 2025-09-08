@@ -41,16 +41,12 @@ public with sharing class ClassesObjectsMethods {
     public static List<String> practiceStringMethods() {
         // Initialize a String with 'Hello, Salesforce!'
         String helloSF = 'Hello, Salesforce!';
-        System.debug(helloSF);   
         // Get the length of the String
-        String helloLength = String.valueOf(helloSF.length()); 
-        System.debug(helloLength);       
+        String helloLength = String.valueOf(helloSF.length());
         // Get a substring of the String of the first 5 characters
         String helloSubstring = helloSF.substring(0,5);
-        System.debug(helloSubstring); 
         // Convert the String to lower case
         String helloLowerCase = helloSF.toLowerCase();
-        System.debug(helloLowerCase);
         
         // Return the list with the string data
         List<String> stringList = new List<String>{};
@@ -76,9 +72,9 @@ public with sharing class ClassesObjectsMethods {
         List<Boolean> containsInput = new List<Boolean> {};
         
         // Check if the string starts with 'Sales'
-        containsInput.add(input.startsWithIgnoreCase('Sales')); 
+        containsInput.add(input.startsWith('Sales')); 
         // Check if the string ends with 'Force'
-        containsInput.add(input.endsWithIgnoreCase('Force'));
+        containsInput.add(input.endsWith('Force'));
         // Check if the string contains 'Awesome'
         containsInput.add(input.contains('Awesome'));
         
@@ -202,7 +198,6 @@ public with sharing class ClassesObjectsMethods {
         for (Integer i = 0; i < 50; i++) {
             random50to100 = (math.random() * 100);
             random50to100 = math.roundToLong(random50to100);
-            System.debug(random50to100);
             if (random50to100 >= 50 && random50to100 <= 100) {
                 break;
             }
