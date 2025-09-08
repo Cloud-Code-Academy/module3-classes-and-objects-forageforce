@@ -372,20 +372,46 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Person {
         // Declare private two instance variables - (TEXT) name and (Number) age
+        private String name;
+        private Integer age;
         
         // Constructor to initialize the name and age
+        public Person (String name, Integer age) {
+            this.name = name;
+            this.age = age;
+        }
     
-        // Method introduceYourself that returns the details of the person        
+        // Method introduceYourself that returns the details of the person
         // Return a string in the format "Hello, my name is <name> and I am <age> years old."
         // For example, introduceYourself() should return a string like "Hello, my name is John Doe and I am 28 years old."
+        public String introduceYourself() {
+            String personHello = 'Hello, my name is ' + name + ' and I am ' + age + ' years old.';
+            return personHello;
+        }
 
         // Getter method that returns the name of the person
+        public String getName() {
+            String personName = name;
+            return personName;
+
+        }
 
         // Getter method that returns the age of the person
+        public Integer getAge() {
+            Integer personAge = age;
+            return personAge;
+
+        }
 
         // Setter method that sets the name of the person
+        public void setName(String name) {
+            this.name = name;
+        }
 
         // Setter method that sets the age of the person
+        public void setAge(Integer age) {
+            this.age = age;
+        }
     }
 
     /**
