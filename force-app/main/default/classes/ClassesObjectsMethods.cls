@@ -493,6 +493,12 @@ public with sharing class ClassesObjectsMethods {
      * @return The Person object of the older person.
      */
     public static Person getOlderPerson(Person person1, Person person2) {
-        return null; // Replace null with the variable you used to store the result
+        if (person1.age == null || person2.age == null) {
+            return null;
+        } else if (person1.age >= person2.age) {
+            return person1;
+        } else {
+            return person2;
+        }
     }
 }
